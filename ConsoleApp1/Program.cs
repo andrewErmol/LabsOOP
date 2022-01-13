@@ -1,10 +1,6 @@
 ﻿using FigureLibrary;
 using FigureLibrary.Figures;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task1
 {
@@ -34,7 +30,7 @@ namespace Task1
                             CreateFigureMenu();
                             break;
                         case 2:
-                            Console.WriteLine(ViewAll());
+                            Console.WriteLine(String.Join("\n", Service.figureList));
                             break;
                         case 3:
                             Console.WriteLine(CheckBelongPoint());
@@ -130,37 +126,29 @@ namespace Task1
             }
         }
 
-        static string ViewAll()
-        {
-            string res = "";
-
-            for (int i = 0; i < Service.figureList.Count; i++)
-            {
-                res += Service.figureList[i].ToString() + "\n";
-            }
-
-            return res;
-        }
-
         static string CheckBelongPoint()
         {
-            Console.Write("Enter namber of figure:");
-            int number = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter number of figure:");
+
+            if(!int.TryParse(Console.ReadLine(), out int number))
+            {
+                throw new Exception("Entered value is used be integer");
+            }
 
             Console.WriteLine("Enter checking point");
             var checkpoint = new Point(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
 
-            bool boolRes = false;
+            bool IsRequired = false;
 
             for (int i = 0; i < Service.figureList.Count; i++)
             {
                 if (Service.figureList[i].Number == number)
                 {
-                    boolRes = Service.figureList[i].CheckPoinBelonging(checkpoint);
+                    IsRequired = Service.figureList[i].CheckPoinBelonging(checkpoint);
                 }
             }
 
-            if (boolRes)
+            if (IsRequired)
             {
                 return $"Specified point belongig to selected figure";
             }
