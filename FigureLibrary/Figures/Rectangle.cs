@@ -4,42 +4,42 @@ namespace FigureLibrary.Figures
 {
     public class Rectangle : Figure
     {
-        protected Point point1;
-        protected Point point2;
+        protected Point Point1;
+        protected Point Point2;
 
-        public Rectangle(int number, Point firstPoint, Point secondPoint) : base(number)
+        public Rectangle(Point firstPoint, Point secondPoint)
         {
-            point1 = firstPoint;
-            point2 = secondPoint;
+            Point1 = firstPoint;
+            Point2 = secondPoint;
         }
 
         public override bool CheckPoinBelonging(Point checkPoint)
         {
             bool isBelong = false;
-            if (point1.X < point2.X && point1.Y < point2.Y)
+            if (Point1.X < Point2.X && Point1.Y < Point2.Y)
             {
-                if (point1.X < checkPoint.X && point2.X > checkPoint.X && point1.Y < checkPoint.Y && point2.Y > checkPoint.Y)
+                if (Point1.X < checkPoint.X && Point2.X > checkPoint.X && Point1.Y < checkPoint.Y && Point2.Y > checkPoint.Y)
                 {
                     isBelong = true;
                 }
             }
-            else if (point1.X < point2.X && point1.Y > point2.Y)
+            else if (Point1.X < Point2.X && Point1.Y > Point2.Y)
             {
-                if (point1.X < checkPoint.X && point2.X > checkPoint.X && point1.Y > checkPoint.Y && point2.Y < checkPoint.Y)
+                if (Point1.X < checkPoint.X && Point2.X > checkPoint.X && Point1.Y > checkPoint.Y && Point2.Y < checkPoint.Y)
                 {
                     isBelong = true;
                 }
             }
-            else if (point1.X > point2.X && point1.Y > point2.Y)
+            else if (Point1.X > Point2.X && Point1.Y > Point2.Y)
             {
-                if (point1.X > checkPoint.X && point2.X < checkPoint.X && point1.Y > checkPoint.Y && point2.Y < checkPoint.Y)
+                if (Point1.X > checkPoint.X && Point2.X < checkPoint.X && Point1.Y > checkPoint.Y && Point2.Y < checkPoint.Y)
                 {
                     isBelong = true;
                 }
             }
-            else if (point1.X > point2.X && point1.Y < point2.Y)
+            else if (Point1.X > Point2.X && Point1.Y < Point2.Y)
             {
-                if (point1.X > checkPoint.X && point2.X < checkPoint.X && point1.Y < checkPoint.Y && point2.Y > checkPoint.Y)
+                if (Point1.X > checkPoint.X && Point2.X < checkPoint.X && Point1.Y < checkPoint.Y && Point2.Y > checkPoint.Y)
                 {
                     isBelong = true;
                 }
@@ -50,32 +50,32 @@ namespace FigureLibrary.Figures
 
         public override double GetPerimetr()
         {
-            return Math.Abs(point2.X - point1.X) * 2 + Math.Abs(point2.Y - point1.Y) * 2;
+            return Math.Abs(Point2.X - Point1.X) * 2 + Math.Abs(Point2.Y - Point1.Y) * 2;
         }
 
         public override double GetSquare()
         {
-            return Math.Abs((point1.X - point2.X) * (point2.Y - point1.Y));
+            return Math.Abs((Point1.X - Point2.X) * (Point2.Y - Point1.Y));
         }
 
         public override string ToString()
         {
-            return $"Type: rectangle\t\tNumber: {Number}\tFirst point: ({point1.X}, {point1.Y})\tSecond point: ({point2.X}, {point2.Y})\tPerimetr: {GetPerimetr()}\tSquare: {GetSquare()}";
+            return $"Type: rectangle\tFirst point: ({Point1.X}, {Point1.Y})\tSecond point: ({Point2.X}, {Point2.Y})\tPerimetr: {GetPerimetr()}\tSquare: {GetSquare()}";
         }
 
         public string VertexOfRectangleAndSquare()
         {
-            return $"Vertice one: {point1.X}, {point1.X};\nVertice two: {point1.X}, {point2.Y};\nVertice three: {point2.X}, {point2.Y};\nVertice four: {point2.X}, {point1.Y}";
+            return $"Vertice one: {Point1.X}, {Point1.X};\nVertice two: {Point1.X}, {Point2.Y};\nVertice three: {Point2.X}, {Point2.Y};\nVertice four: {Point2.X}, {Point1.Y}";
         }
 
         public string SideOfRectangleAndSquare()
         {
-            return $"Width: {Math.Abs(point2.X - point1.X)}\nHeight: {Math.Abs(point2.Y - point1.Y)}";
+            return $"Width: {Math.Abs(Point2.X - Point1.X)}\nHeight: {Math.Abs(Point2.Y - Point1.Y)}";
         }
 
         public string DiagonalOfRectangleAndSquare()
         {
-            return $"{Math.Sqrt(Math.Pow(point2.X - point1.X, 2) + Math.Pow(point2.Y - point1.Y, 2))}";
+            return $"{Math.Sqrt(Math.Pow(Point2.X - Point1.X, 2) + Math.Pow(Point2.Y - Point1.Y, 2))}";
         }
     }
 }

@@ -30,16 +30,16 @@ namespace Task1
                             CreateFigureMenu();
                             break;
                         case 2:
-                            Console.WriteLine(String.Join("\n", Service.figureList));
+                            Console.WriteLine(String.Join("\n", Service.FigureList));
                             break;
                         case 3:
                             Console.WriteLine(CheckBelongPoint());
                             break;
                         case 4:
-                            Console.WriteLine(SpecialFunctionsOfRectangleAndSquare());
+                            Console.WriteLine(SpecialFunctionsForRectangleAndSquare());
                             break;
                         case 5:
-                            Console.WriteLine($"{SpecialFanctionOfCircle()}");
+                            Console.WriteLine($"Diametr: {SpecialFunctionForCircle()}");
                             break;
                         case 0:
                             Console.WriteLine("End of program");
@@ -56,28 +56,31 @@ namespace Task1
             }
         }
 
-        static string SpecialFunctionsOfRectangleAndSquare()
+        static string SpecialFunctionsForRectangleAndSquare()
         {
             Console.Write("Enter number of figure: ");
-            int number = Convert.ToInt32(Console.ReadLine());
+
+            if (!int.TryParse(Console.ReadLine(), out int number))
+            {
+                throw new Exception("Entered value is used be integer");
+            }
+
+            if (Service.FigureList.Count < number)
+            {
+                throw new Exception("Figure with such number is not exist");
+            }
 
             string res = string.Empty;
 
-            for (int i = 0; i < Service.figureList.Count; i++)
+            if(Service.FigureList[number - 1].GetType() == typeof(Rectangle))
             {
-                if (Service.figureList[i].Number == number)
-                {
-                    if (Service.figureList[i].GetType().Name == "Rectangle")
-                    {
-                        Rectangle rectangle = (Rectangle)Service.figureList[i];
-                        res += $"{rectangle.VertexOfRectangleAndSquare()}\nSide: {rectangle.SideOfRectangleAndSquare()}\nDiagonal: {rectangle.DiagonalOfRectangleAndSquare()}";
-                    }
-                    else if (Service.figureList[i].GetType().Name == "Square")
-                    {
-                        Square square = (Square)Service.figureList[i];
-                        res += $"{square.VertexOfRectangleAndSquare()}\nSide: {square.SideOfRectangleAndSquare()}\nDiagonal{square.DiagonalOfRectangleAndSquare()}";
-                    }
-                }
+                Rectangle rectangle = (Rectangle)Service.FigureList[number - 1];
+                res += $"{rectangle.VertexOfRectangleAndSquare()}\nSide: {rectangle.SideOfRectangleAndSquare()}\nDiagonal: {rectangle.DiagonalOfRectangleAndSquare()}";
+            }
+            else if (Service.FigureList[number - 1].GetType().Name == "Square")
+            {
+                Square square = (Square)Service.FigureList[number - 1];
+                res += $"{square.VertexOfRectangleAndSquare()}\nSide: {square.SideOfRectangleAndSquare()}\nDiagonal{square.DiagonalOfRectangleAndSquare()}";
             }
 
             return res;
@@ -92,31 +95,28 @@ namespace Task1
 
             int figureMenuItem = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Input number of figure: ");
-            int number = Convert.ToInt32(Console.ReadLine());
-
             switch (figureMenuItem)
             {
                 case 1:
                     Console.WriteLine("Input center of circle:");
                     Point center = new Point(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
-                    Console.Write("Inpur radius:");
-                    int radius = Convert.ToInt32(Console.ReadLine());
-                    Service.figureList.Add(new Circle(number, center, radius));
+                    Console.Write("Inpur Radius:");
+                    int Radius = Convert.ToInt32(Console.ReadLine());
+                    Service.FigureList.Add(new Circle(center, Radius));
                     break;
                 case 2:
                     Console.WriteLine("Input first point of rectangle:");
                     Point firstRectanglePoint = new Point(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
                     Console.WriteLine("Input second point of rectangle:");
                     Point secondRectanglePoint = new Point(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
-                    Service.figureList.Add(new Rectangle(number, firstRectanglePoint, secondRectanglePoint));
+                    Service.FigureList.Add(new Rectangle(firstRectanglePoint, secondRectanglePoint));
                     break;
                 case 3:
                     Console.WriteLine("Input first point of square:");
                     Point firstSquarePoint = new Point(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
                     Console.WriteLine("Input second point of Square:");
                     Point secondSquarePoint = new Point(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
-                    Service.figureList.Add(new Square(number, firstSquarePoint, secondSquarePoint));
+                    Service.FigureList.Add(new Square(firstSquarePoint, secondSquarePoint));
                     break;
                 case 0:
                     break;
@@ -129,24 +129,22 @@ namespace Task1
         static string CheckBelongPoint()
         {
             Console.Write("Enter number of figure:");
-
             if(!int.TryParse(Console.ReadLine(), out int number))
             {
                 throw new Exception("Entered value is used be integer");
             }
 
             Console.WriteLine("Enter checking point");
-            var checkpoint = new Point(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
+            Point checkpoint = new Point(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
 
             bool IsRequired = false;
 
-            for (int i = 0; i < Service.figureList.Count; i++)
+            if (Service.FigureList.Count < number)
             {
-                if (Service.figureList[i].Number == number)
-                {
-                    IsRequired = Service.figureList[i].CheckPoinBelonging(checkpoint);
-                }
+                throw new Exception("Figure with such number is not exist");
             }
+
+            IsRequired = Service.FigureList[number - 1].CheckPoinBelonging(checkpoint);
 
             if (IsRequired)
             {
@@ -158,23 +156,25 @@ namespace Task1
             }
         }
 
-        static double SpecialFanctionOfCircle()
+        static double SpecialFunctionForCircle()
         {
             Console.Write("Enter number of figure: ");
-            int number = Convert.ToInt32(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int number))
+            {
+                throw new Exception("Entered value is used be integer");
+            }
+
+            if (Service.FigureList.Count < number)
+            {
+                throw new Exception("Figure with such number is not exist");
+            }
 
             double res = 0;
 
-            for (int i = 0; i < Service.figureList.Count; i++)
+            if (Service.FigureList[number - 1].GetType() == typeof(Circle))
             {
-                if (Service.figureList[i].Number == number)
-                {
-                    if (Service.figureList[i].GetType().Name == "Circle")
-                    {
-                        Circle circle = (Circle)Service.figureList[i];
-                        res = circle.Diametr();
-                    }
-                }
+                Circle circle = (Circle)Service.FigureList[number - 1];
+                res = circle.Diametr(circle.Radius);
             }
 
             return res;

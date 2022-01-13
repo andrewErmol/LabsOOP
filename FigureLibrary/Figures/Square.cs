@@ -4,22 +4,22 @@ namespace FigureLibrary.Figures
 {
     public class Square : Rectangle
     {
-        public Square(int number, Point firstPoint, Point secondPoint) : base(number, firstPoint, secondPoint)
+        public Square(Point firstPoint, Point secondPoint) : base(firstPoint, secondPoint)
         {
             CheckExistance(firstPoint, secondPoint);
         }
 
-        private void CheckExistance(Point point1, Point point2)
+        private void CheckExistance(Point Point1, Point Point2)
         {
-            if (!(point1.X - point2.X == point1.Y - point2.Y))
+            if (!(Point1.X - Point2.X == Point1.Y - Point2.Y))
             {
-                throw new Exception("Incorrect values were input");
+                throw new Exception("Entered points do not form square");
             }
         }
 
         public override string ToString()
         {
-            return $"Type: square\tNumber: {Number}\tFirst point: ({point1.X}, {point1.Y})\tSecond point: ({point2.X}, {point2.Y})\tPerimetr: {GetPerimetr()}\tSquare: {GetSquare()}";
+            return $"Type: square\tFirst point: ({Point1.X}, {Point1.Y})\tSecond point: ({Point2.X}, {Point2.Y})\tPerimetr: {GetPerimetr()}\tSquare: {GetSquare()}";
         }
     }
 }
