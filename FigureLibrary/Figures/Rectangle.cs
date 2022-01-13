@@ -48,35 +48,17 @@ namespace FigureLibrary.Figures
             return isBelong;
         }
 
-        public override double GetPerimetr()
-        {
-            return Math.Abs(Point2.X - Point1.X) * 2 + Math.Abs(Point2.Y - Point1.Y) * 2;
-        }
+        public override double GetPerimetr() => Math.Abs(Point2.X - Point1.X) * 2 + Math.Abs(Point2.Y - Point1.Y) * 2;
 
-        public override double GetSquare()
-        {
-            return Math.Abs((Point1.X - Point2.X) * (Point2.Y - Point1.Y));
-        }
+        public override double GetSquare() => Math.Abs((Point1.X - Point2.X) * (Point2.Y - Point1.Y));
 
-        public override string ToString()
-        {
-            return $"Type: rectangle\tFirst point: ({Point1.X}, {Point1.Y})\tSecond point: ({Point2.X}, {Point2.Y})\tPerimetr: {GetPerimetr()}\tSquare: {GetSquare()}";
-        }
+        public override string ToString() => $"Type: rectangle\tFirst point: ({Point1.X}, {Point1.Y})\tSecond point: ({Point2.X}, {Point2.Y})\tPerimetr: {GetPerimetr()}\tSquare: {GetSquare()}";
 
-        public string VertexOfRectangleAndSquare()
-        {
-            return $"Vertice one: {Point1.X}, {Point1.X};\nVertice two: {Point1.X}, {Point2.Y};\nVertice three: {Point2.X}, {Point2.Y};\nVertice four: {Point2.X}, {Point1.Y}";
-        }
+        public string VertexOfRectangleAndSquare() => $"Vertice one: {Point1.X}, {Point1.X};\nVertice two: {Point1.X}, {Point2.Y};\nVertice three: {Point2.X}, {Point2.Y};\nVertice four: {Point2.X}, {Point1.Y}";
 
-        public string SideOfRectangleAndSquare()
-        {
-            return $"Width: {Math.Abs(Point2.X - Point1.X)}\nHeight: {Math.Abs(Point2.Y - Point1.Y)}";
-        }
+        public string SideOfRectangleAndSquare() => $"Width: {Math.Abs(Point2.X - Point1.X)}\nHeight: {Math.Abs(Point2.Y - Point1.Y)}";
 
-        public string DiagonalOfRectangleAndSquare()
-        {
-            return $"{Math.Sqrt(Math.Pow(Point2.X - Point1.X, 2) + Math.Pow(Point2.Y - Point1.Y, 2))}";
-        }
+        public string DiagonalOfRectangleAndSquare() => $"{Math.Sqrt(Math.Pow(Point2.X - Point1.X, 2) + Math.Pow(Point2.Y - Point1.Y, 2))}";
     }
 }
 

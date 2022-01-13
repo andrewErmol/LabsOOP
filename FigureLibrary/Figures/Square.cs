@@ -17,10 +17,7 @@ namespace FigureLibrary.Figures
             }
         }
 
-        public override string ToString()
-        {
-            return $"Type: square\tFirst point: ({Point1.X}, {Point1.Y})\tSecond point: ({Point2.X}, {Point2.Y})\tPerimetr: {GetPerimetr()}\tSquare: {GetSquare()}";
-        }
+        public override string ToString() => $"Type: square\tFirst point: ({Point1.X}, {Point1.Y})\tSecond point: ({Point2.X}, {Point2.Y})\tPerimetr: {GetPerimetr()}\tSquare: {GetSquare()}";
     }
 }
 

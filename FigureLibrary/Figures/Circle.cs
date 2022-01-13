@@ -5,35 +5,22 @@ namespace FigureLibrary.Figures
     public class Circle : Figure
     {
         Point center;
-        public int Radius { get; }
-        public delegate double Operation(int r);
+        int radius;
 
-        public Circle(Point center, int Radius)
+        public Circle(Point center, int radius)
         {
             this.center = center;
-            this.Radius = Radius;
+            this.radius = radius;
         }
 
-        public override bool CheckPoinBelonging(Point checkPoint)
-        {
-            return (Math.Pow(checkPoint.X - center.X, 2) + Math.Pow(checkPoint.Y - center.Y, 2) < Math.Pow(Radius, 2));
-        }
+        public override bool CheckPoinBelonging(Point checkPoint) => (Math.Pow(checkPoint.X - center.X, 2) + Math.Pow(checkPoint.Y - center.Y, 2) < Math.Pow(radius, 2));
 
-        public override double GetPerimetr()
-        {
-            return 2 * Math.PI * Radius;
-        }
+        public override double GetPerimetr() => 2 * Math.PI * radius;
 
-        public override double GetSquare()
-        {
-            return Math.PI * Math.Pow(Radius, 2);
-        }
+        public override double GetSquare() => Math.PI * Math.Pow(radius, 2);
 
-        public override string ToString()
-        {
-            return $"Type: circle\tCenter: ({center.X}, {center.Y})\tRadius: {Radius}\tPerimetr: {GetPerimetr()}\tSquare: {GetSquare()}";
-        }
+        public override string ToString() => $"Type: circle\tCenter: ({center.X}, {center.Y})\tRadius: {radius}\tPerimetr: {GetPerimetr()}\tSquare: {GetSquare()}";
 
-        public Operation Diametr = (radius) => radius* 2;
+        public double Diametr() => radius * 2;
     }
 }

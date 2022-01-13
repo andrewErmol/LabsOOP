@@ -100,9 +100,9 @@ namespace Task1
                 case 1:
                     Console.WriteLine("Input center of circle:");
                     Point center = new Point(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
-                    Console.Write("Inpur Radius:");
-                    int Radius = Convert.ToInt32(Console.ReadLine());
-                    Service.FigureList.Add(new Circle(center, Radius));
+                    Console.Write("Inpur radius:");
+                    int radius = Convert.ToInt32(Console.ReadLine());
+                    Service.FigureList.Add(new Circle(center, radius));
                     break;
                 case 2:
                     Console.WriteLine("Input first point of rectangle:");
@@ -174,7 +174,7 @@ namespace Task1
             if (Service.FigureList[number - 1].GetType() == typeof(Circle))
             {
                 Circle circle = (Circle)Service.FigureList[number - 1];
-                res = circle.Diametr(circle.Radius);
+                res = circle.Diametr();
             }
 
             return res;
