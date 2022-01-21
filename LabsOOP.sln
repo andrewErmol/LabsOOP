@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Variant7", "Variant7\Variant7.csproj", "{9A8E7A74-FE74-41CE-A03D-4052A616CFE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyArrayLibrary", "ClassLibraryForMyArray\MyArrayLibrary.csproj", "{67F428E7-3EDB-497C-B300-DB64BEB15415}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A8E7A74-FE74-41CE-A03D-4052A616CFE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A8E7A74-FE74-41CE-A03D-4052A616CFE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A8E7A74-FE74-41CE-A03D-4052A616CFE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A8E7A74-FE74-41CE-A03D-4052A616CFE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67F428E7-3EDB-497C-B300-DB64BEB15415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67F428E7-3EDB-497C-B300-DB64BEB15415}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67F428E7-3EDB-497C-B300-DB64BEB15415}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67F428E7-3EDB-497C-B300-DB64BEB15415}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
