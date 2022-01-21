@@ -22,7 +22,7 @@ namespace MyArrayLibrary
             set => ThisArray[index] = value;
         }
 
-        public static int MetodsForMyArray(MyArray array)
+        public static int MetodForMyArray(MyArray array)
         {
             int count = 0;
             for (int i = 0; i < array.Lenght; i++)
@@ -36,7 +36,7 @@ namespace MyArrayLibrary
             return count;
         }
 
-        public static int MetodsForMyArray(MyArray array, int enteredNumber)
+        public static int MetodForMyArray(MyArray array, int enteredNumber)
         {
             int count = 0;
             for (int i = 0; i < array.Lenght; i++)
@@ -50,7 +50,7 @@ namespace MyArrayLibrary
             return count;
         }
 
-        public static int MetodsForMyArray(MyArray array, double value)
+        public static int MetodForMyArray(MyArray array, double value)
         {
             int count = 0;
             for (int i = 0; i < array.Lenght; i++)

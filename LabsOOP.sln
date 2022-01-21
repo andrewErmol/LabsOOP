@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Variant7", "Variant7\Varian
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyArrayLibrary", "ClassLibraryForMyArray\MyArrayLibrary.csproj", "{67F428E7-3EDB-497C-B300-DB64BEB15415}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyArrayTest", "MyArrayTest\MyArrayTest.csproj", "{621ED94F-2CD4-4F98-8500-2B9FC38A7D2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{67F428E7-3EDB-497C-B300-DB64BEB15415}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67F428E7-3EDB-497C-B300-DB64BEB15415}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67F428E7-3EDB-497C-B300-DB64BEB15415}.Release|Any CPU.Build.0 = Release|Any CPU
+		{621ED94F-2CD4-4F98-8500-2B9FC38A7D2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{621ED94F-2CD4-4F98-8500-2B9FC38A7D2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{621ED94F-2CD4-4F98-8500-2B9FC38A7D2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{621ED94F-2CD4-4F98-8500-2B9FC38A7D2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
