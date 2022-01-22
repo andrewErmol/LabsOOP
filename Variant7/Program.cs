@@ -1,9 +1,5 @@
 ﻿using MyArrayLibrary;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
- using System.Threading.Tasks;
 
 namespace Variant7
 {
@@ -51,6 +47,7 @@ namespace Variant7
                     }
                     Console.WriteLine(array.ToString());
                 }
+                Console.ReadKey();
             }
             catch (Exception error)
             {
