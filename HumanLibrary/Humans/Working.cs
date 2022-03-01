@@ -1,25 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HumanLibrary.Humans
+﻿namespace HumanLibrary.Humans
 {
+    /// <summary>
+    /// Consist of object Working type
+    /// </summary>
     public class Working : Human
     {
         string PlaceOfWork;
         string Speciality;
         List<int> SalaryFor12Months;
 
-        public Working(string surname, int yearOfBirth, string status, string placeOfWork, string speciality, List<int> marks) : base(surname, yearOfBirth, status)
+        /// <summary>
+        /// Create object working type
+        /// </summary>
+        /// <param name="surname"></param>
+        /// <param name="yearOfBirth"></param>
+        /// <param name="status"></param>
+        /// <param name="placeOfWork"></param>
+        /// <param name="speciality"></param>
+        /// <param name="marks"></param>
+        public Working(string surname, int yearOfBirth, string status, string placeOfWork, string speciality, List<int> marks)
+            : base(surname, yearOfBirth, status)
         {
             PlaceOfWork = placeOfWork;
             Speciality = speciality;
             SalaryFor12Months = marks;
         }
 
-        public override void Info()
+        /// <summary>
+        /// Find max salary of 12 months
+        /// </summary>
+        /// <returns>int max salary of 12 months</returns>
+        public int MaxSalary()
         {
             int maxSalary = 0;
 
@@ -30,8 +41,14 @@ namespace HumanLibrary.Humans
                     maxSalary = SalaryFor12Months[i];
                 }
             }
+            return maxSalary;
+        }
 
-            Console.Write($"Surname: {Surname}\tStatus: {Status}\t Year of birth: {YearOfBirth}\tMax salary of 12 mounths: {maxSalary}\t");
+        public override string Info()
+        {
+            return $"Surname: {Surname}\tStatus: {Status}\t" +
+                $"Year of birth: {YearOfBirth}\tPlace of work: {PlaceOfWork}\t" +
+                $"Speciality: {Speciality}\tMax salary of 12 months: {MaxSalary()}\t";
         }
     }
 }

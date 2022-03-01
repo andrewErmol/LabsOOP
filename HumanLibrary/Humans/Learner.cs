@@ -1,33 +1,62 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HumanLibrary.Humans
+﻿namespace HumanLibrary.Humans
 {
-    public abstract class Learner : Human
+    /// <summary>
+    /// Consist of object Learner type
+    /// </summary>
+    public abstract class Learner : Human, IComparable<Learner>
     {
-        string NameOfTheEducationalInstitution;
+        internal string NameOfTheEducationalInstitution;
         List<int> Marks;
 
-        public Learner(string surname, int yearOfBirth, string status, string nameOfTheEducationalInstitution, List<int> marks) : base(surname, yearOfBirth, status)
+        /// <summary>
+        /// Create object learner type
+        /// </summary>
+        /// <param name="surname"></param>
+        /// <param name="yearOfBirth"></param>
+        /// <param name="status"></param>
+        /// <param name="nameOfTheEducationalInstitution"></param>
+        /// <param name="marks"></param>
+        public Learner(string surname, int yearOfBirth, string status, string nameOfTheEducationalInstitution, List<int> marks)
+            : base(surname, yearOfBirth, status)
         {
             NameOfTheEducationalInstitution = nameOfTheEducationalInstitution;
             Marks = marks;
         }
 
-        public override void Info()
+        /// <summary>
+        /// Sorts learner alphabetically
+        /// </summary>
+        /// <param name="otherLearner"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        public int CompareTo(Learner? otherLearner)
         {
-            int AverageMark = 0;
+            if (otherLearner == null)
+                throw new ArgumentException("Incorrect format");
+
+            return Surname.CompareTo(otherLearner.Surname);
+        }
+
+        /// <summary>
+        /// Find avarge mark
+        /// </summary>
+        /// <returns>double avarge mark</returns>
+        public double AverageMark()
+        {
+            double averageMark = 0;
 
             for (int i = 0; i < Marks.Count; i++)
             {
-                AverageMark += Marks[i];
+                averageMark += Marks[i];
             }
-            AverageMark /= Marks.Count;
+            averageMark /= Marks.Count;
 
-            Console.Write($"Surname: {Surname}\tStatus: {Status}\t Year of birth: {YearOfBirth}\tAverage mark: {AverageMark}\t");
+            return averageMark;
+        }
+
+        public override string Info()
+        {
+            return $"Surname: {Surname}\tStatus: {Status}\t Year of birth: {YearOfBirth}\tAverage mark: {AverageMark()}\t";
         }
     }
 }
