@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab8Variant7", "Lab8Variant7\Lab8Variant7.csproj", "{0DAC887E-13D3-4063-97B5-614D26201AE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanLibrary", "HumanLibrary\HumanLibrary.csproj", "{4FBBB2C1-FA39-465F-B436-26898F9BCBFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanLibrary", "HumanLibrary\HumanLibrary.csproj", "{4FBBB2C1-FA39-465F-B436-26898F9BCBFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestForSomeMethods", "UnitTestForSomeMethods\UnitTestForSomeMethods.csproj", "{76B883DE-C592-450E-BD4D-99F11708C438}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4FBBB2C1-FA39-465F-B436-26898F9BCBFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FBBB2C1-FA39-465F-B436-26898F9BCBFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FBBB2C1-FA39-465F-B436-26898F9BCBFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76B883DE-C592-450E-BD4D-99F11708C438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B883DE-C592-450E-BD4D-99F11708C438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B883DE-C592-450E-BD4D-99F11708C438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B883DE-C592-450E-BD4D-99F11708C438}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
