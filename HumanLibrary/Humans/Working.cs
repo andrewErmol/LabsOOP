@@ -5,9 +5,9 @@
     /// </summary>
     public class Working : Human
     {
-        string PlaceOfWork;
-        string Speciality;
-        List<int> SalaryFor12Months;
+        public string PlaceOfWork { get; }
+        public string Speciality { get; }
+        private List<int> SalaryFor12Months;
 
         /// <summary>
         /// Create object working type

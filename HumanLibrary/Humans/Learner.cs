@@ -5,8 +5,8 @@
     /// </summary>
     public abstract class Learner : Human, IComparable<Learner>
     {
-        internal string NameOfTheEducationalInstitution;
-        List<int> Marks;
+        public string NameOfTheEducationalInstitution { get; }
+        private List<int> Marks;
 
         /// <summary>
         /// Create object learner type

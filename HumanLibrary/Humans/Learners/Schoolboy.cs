@@ -7,7 +7,7 @@ namespace HumanLibrary.Humans.Learners
     /// </summary>
     public class Schoolboy : Learner
     {
-        string SchoolClass;
+        public string SchoolClass { get; }
 
         /// <summary>
         /// Create object schoolboy type
@@ -44,7 +44,7 @@ namespace HumanLibrary.Humans.Learners
 
             if (!primarySchoolMatch.Success && !highSchoolMatch.Success)
             {
-                throw new Exception("Incorrect format of number");
+                throw new MyException("Incorrect format of number: ", schoolClass);
             }
 
             return schoolClass;

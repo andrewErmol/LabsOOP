@@ -3,7 +3,15 @@ using HumanLibrary.Humans;
 using HumanLibrary.Humans.Learners;
 
 string Adres = @"..\Humen.txt";
-Service.ReadData(Adres);
+try
+{
+    Service.ReadData(Adres);
+}
+catch (MyException ex)
+{
+    Console.WriteLine(ex.Message + ex.Value);
+}
+
 
 for (int i = 0; i < Service.HumansList.Count; i++)
 {

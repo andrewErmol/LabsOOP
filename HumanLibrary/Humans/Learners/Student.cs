@@ -7,7 +7,7 @@ namespace HumanLibrary.Humans.Learners
     /// </summary>
     public class Student : Learner
     {
-        string Group;
+        public string Group { get; }
 
         /// <summary>
         /// Create object student type
@@ -42,7 +42,7 @@ namespace HumanLibrary.Humans.Learners
 
             if (!groupMatch.Success)
             {
-                throw new Exception("Incorrect format of number");
+                throw new MyException("Incorrect format of number: ", group);
             }
 
             return group;

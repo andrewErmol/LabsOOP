@@ -7,8 +7,8 @@ namespace HumanLibrary
     /// </summary>
     public static class Service
     {
-        public static List<Human> HumansList;
-        public static List<Learner> LearnerList;
+        public static List<Human> HumansList { get; private set; }
+        public static List<Learner> LearnerList { get; private set; }
 
         /// <summary>
         /// Create an array of human from the file text
