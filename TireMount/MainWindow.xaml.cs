@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TireMountLibrary;
 
 namespace TireMount
 {
@@ -23,6 +24,26 @@ namespace TireMount
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void AddData_Click(object sender, RoutedEventArgs e)
+        {
+            Service.SetDataForTireMountWork();
+        }
+
+        private void ViewDataOfWorkWith_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(Service.ViewWorksOfAutomobileModel(MyTextBox.Text));
+        }
+
+        private void MoreWorkOfAutomobile_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(Service.MoreWorkForAutoModel(MyTextBox.Text));
+        }
+
+        private void CostOfWorks_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

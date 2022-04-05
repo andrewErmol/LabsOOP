@@ -11,4 +11,8 @@
     <Content Include="bin\Debug\TireMount.xml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TireMountLibrary\TireMountLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

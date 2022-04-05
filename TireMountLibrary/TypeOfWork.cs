@@ -10,6 +10,8 @@ namespace TireMountLibrary
     {
         ReplacingTires,
         RepairOfPunctures,
-        BalancingWheels
+        BalancingWheels,
+        Split_convergence,
+        nullValue
     }
 }

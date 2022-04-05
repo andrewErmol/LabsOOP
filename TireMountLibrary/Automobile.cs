@@ -8,8 +8,10 @@ namespace TireMountLibrary
 {
     public class Automobile
     {
-        public string CarModel { get; }
-        public string CarNumber { get; }
+        public string CarModel { get; internal set; }
+        public string CarNumber { get; internal set; }
+
+        public Automobile() { }
 
         public Automobile(string carModel, string carNumber)
         {

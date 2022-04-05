@@ -6,5 +6,11 @@
         xmlns:local="clr-namespace:TireMount"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+    <Grid Background="Purple">
+        <TextBox x:Name="MyTextBox" Margin="258,174,258,174"></TextBox>
+        <Button x:Name="AddData" Content="Add data" Margin="10,10,564,347" Click="AddData_Click"></Button>
+        <Button x:Name="ViewDataOfWorkWith" Content="Works for all auto" Margin="564,10,10,347" Click="ViewDataOfWorkWith_Click"></Button>
+        <Button x:Name="MoreWorkOfAutomobile" Content="More work of auto" Margin="564,347,10,10" Click="MoreWorkOfAutomobile_Click"></Button>
+        <Button x:Name="CostOfWorks" Content="Price of all works withentered date" Margin="10,347,564,10" Click="CostOfWorks_Click"></Button>
+    </Grid>
 </Window>

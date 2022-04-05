@@ -2,20 +2,22 @@
 {
     public class Work
     {
-        public DateTime DateOfWork { get; }
-        public decimal Cost { get; }
-        public Automobile Car { get; }
-        public TypeOfWork WorkType { get; }
+        public DateTime DateOfWork { get; internal set; }
+        public decimal Cost { get; internal set; }
+        public Automobile Car { get; internal set; }
+        public TypeOfWork WorkType { get; internal set; }
 
-        public Work(string dateOfWork, decimal cost, Automobile car, string workType)
+        public Work() { }
+
+        public Work(string dateOfWork, decimal cost, string carModel, string carNumber, string workType)
         {
             DateOfWork = DateTime.Parse(dateOfWork);
             Cost = cost;
-            Car = car;
+            Car = new Automobile(carModel, carNumber);
             WorkType = SetTypeOfWork(workType);
         }
 
-        private TypeOfWork SetTypeOfWork(string workType)
+        internal static TypeOfWork SetTypeOfWork(string workType)
         {
             switch (workType)
             {
@@ -25,6 +27,8 @@
                     return TypeOfWork.RepairOfPunctures;
                 case "Balancing wheels":
                     return TypeOfWork.BalancingWheels;
+                case "Split-convergence":
+                    return TypeOfWork.Split_convergence;
                 default:
                     throw new Exception("Doesn't exist entered type of work");
             }
