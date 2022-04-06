@@ -133,7 +133,7 @@ namespace TireMountLibrary
                     {
                         workcOfEnteredModel.Add(work.WorkType, 1);
                     }
-                    if (workcOfEnteredModel.ContainsKey(work.WorkType))
+                    else if (workcOfEnteredModel.ContainsKey(work.WorkType))
                     {
                         workcOfEnteredModel[work.WorkType]++;
                     }
@@ -164,7 +164,7 @@ namespace TireMountLibrary
 
             foreach (Work work in Works)
             {
-                if (work.DateOfWork > dateStart && work.DateOfWork < dateFinish)
+                if (work.DateOfWork >= dateStart && work.DateOfWork <= dateFinish)
                 {
                     if (!costForAllWorkTypeOfIntervalDate.ContainsKey(work.WorkType))
                     {

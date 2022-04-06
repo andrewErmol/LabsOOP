@@ -43,7 +43,12 @@ namespace TireMount
 
         private void CostOfWorks_Click(object sender, RoutedEventArgs e)
         {
+            string[] datas = MyTextBox.Text.Split(' ');
 
+            const int first = 0;
+            const int last = 1;
+
+            MessageBox.Show(Service.WorkCostOfEnteredInterval(datas[first], datas[last]));
         }
     }
 }
